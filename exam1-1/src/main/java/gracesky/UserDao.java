@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 /**
  * Created by gracesky on 2016. 4. 2..
  */
-public class UserDao {
+public abstract class UserDao {
     public void add(User user) throws ClassNotFoundException, SQLException {
         Connection c = getConnection();
 
@@ -49,9 +49,9 @@ public class UserDao {
         return user;
     }
 
-    private Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection c = DriverManager.getConnection("jdbc:mysql://localhost/study", "study", "study");
-        return c;
-    }
+    public abstract Connection getConnection() throws ClassNotFoundException, SQLException;
+
+
 }
+
+

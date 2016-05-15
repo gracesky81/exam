@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class FirstExam
 {
     public static void main( String[] args ) throws ClassNotFoundException, SQLException {
-        UserDao dao = new UserDao();
+        UserDao dao = new NUserDao();
 
         User user = new User();
         user.setId("me");
