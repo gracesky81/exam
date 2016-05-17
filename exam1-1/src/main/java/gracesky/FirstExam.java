@@ -9,7 +9,9 @@ import java.sql.SQLException;
 public class FirstExam
 {
     public static void main( String[] args ) throws ClassNotFoundException, SQLException {
-        UserDao dao = new NUserDao();
+        ConnectionMaker connectionMaker = new DConnectionMaker();
+
+        UserDao dao = new UserDao(connectionMaker);
 
         User user = new User();
         user.setId("me");
